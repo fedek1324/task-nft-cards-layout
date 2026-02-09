@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  align-items: center;
+  height: 145px;
+  padding: 46px 97px;
+  background: #fff;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+  margin-left: 66px;
+  list-style: none;
+
+  a {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    transition: color 0.2s, font-weight 0.2s;
+
+    &::after {
+      content: attr(data-text);
+      font-weight: 700;
+      visibility: hidden;
+      height: 0;
+      display: block;
+      overflow: hidden;
+    }
+
+    &:hover {
+      color: var(--color-text-primary);
+      font-weight: 700;
+    }
+  }
+}
