@@ -1,18 +1,49 @@
+@import '../../styles/mixins';
+
 .sliderWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
   width: 100%;
 }
 
 .swiper {
   width: 100%;
   overflow: visible;
+
+  @include mobile-only {
+    padding-bottom: 50px;
+  }
+
+  @include tablet-only {
+    padding-bottom: 50px;
+  }
+
+  @include desktop-only {
+    padding-bottom: 70px;
+  }
+
+  @include desktop2-and-up {
+    padding-bottom: 70px;
+  }
 }
 
 .slide {
-  width: 281px;
+  @include mobile-only {
+    width: 210px;
+  }
+
+  @include tablet-only {
+    width: 210px;
+  }
+
+  @include desktop-only {
+    width: 281px;
+  }
+
+  @include desktop2-and-up {
+    width: 281px;
+  }
 }
 
 .loading {
@@ -29,20 +60,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 166px;
-  height: fit-content;
-  padding: 20px 28px;
-  border-radius: 17px;
   background: var(--color-neutrals-8);
-  box-shadow: 0px 43px 34px -25.87px rgba(15, 15, 15, 0.12);
+
+  @include mobile-only {
+    width: 124px;
+    height: 48px;
+    padding: 15px 21px;
+    border-radius: 13px;
+    box-shadow: 0px 32px 26px -19.4px rgba(15, 15, 15, 0.12);
+  }
+
+  @include tablet-only {
+    width: 124px;
+    height: 48px;
+    padding: 15px 21px;
+    border-radius: 13px;
+    box-shadow: 0px 32px 26px -19.4px rgba(15, 15, 15, 0.12);
+  }
+
+  @include desktop-only {
+    width: 166px;
+    padding: 20px 28px;
+    border-radius: 17px;
+    box-shadow: 0px 43px 34px -25.87px rgba(15, 15, 15, 0.12);
+    margin-bottom: 70px;
+  }
+
+  @include desktop2-and-up {
+    width: 166px;
+    padding: 20px 28px;
+    border-radius: 17px;
+    box-shadow: 0px 43px 34px -25.87px rgba(15, 15, 15, 0.12);
+    margin-bottom: 70px;
+  }
 }
 
 .arrows {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0;
-  width: 110px;
+
+  @include mobile-only {
+    width: 82px;
+    padding: 15px;
+  }
+
+  @include tablet-only {
+    width: 82px;
+  }
+
+  @include desktop-only {
+    width: 110px;
+  }
+
+  @include desktop2-and-up {
+    width: 110px;
+  }
 }
 
 .arrow {
@@ -59,6 +132,13 @@
   transition: opacity 0.2s;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+
+  @include tablet-only {
+    img {
+      width: 10.5px;
+      height: 6.75px;
+    }
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -77,45 +157,23 @@
 
 .divider {
   width: 2px;
-  height: 24px;
   border-radius: 2px;
   background: var(--color-neutrals-6);
-}
 
-@media (max-width: 1439px) {
-  .slide {
-    width: 210px;
-  }
-
-  .arrows {
-    width: 124px;
-    padding: 15px 21px;
-    border-radius: 13px;
-    box-shadow: 0px 32px 26px -19.4px #0F0F0F1F;
-  }
-
-  .arrow {
-    img {
-      width: 10.5px;
-      height: 6.75px;
-    }
-  }
-
-  .divider {
+  @include mobile-only {
     height: 18px;
   }
-}
 
-@media (max-width: 1023px) {
-  .swiper {
-    box-shadow: 28px 9px 45px 0px rgba(199, 199, 199, 0.6);
+  @include tablet-only {
+    height: 18px;
   }
 
-  .sliderWrapper {
-    gap: 50px;
+  @include desktop-only {
+    height: 24px;
   }
 
-  .arrows {
-    padding: 15px;
+  @include desktop2-and-up {
+    height: 24px;
   }
 }
+

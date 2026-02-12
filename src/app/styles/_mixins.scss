@@ -1,0 +1,50 @@
+// Breakpoints
+// Mobile: 0-1023px
+// Tablet: 1024-1439px
+// Desktop: 1440-1919px
+// Desktop2: 1920-2559px
+// 2K: 2560-3839px
+// 4K: 3840px+
+
+@mixin mobile-only {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin desktop2-only {
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    @content;
+  }
+}
+
+@mixin resolution-2k-only {
+  @media (min-width: 2560px) and (max-width: 3839px) {
+    @content;
+  }
+}
+
+@mixin resolution-4k {
+  @media (min-width: 3840px) {
+    @content;
+  }
+}
+
+// Combined mixin for desktop2 and higher resolutions (2K, 4K)
+@mixin desktop2-and-up {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

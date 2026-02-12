@@ -1,3 +1,5 @@
+@import './styles/mixins';
+
 @font-face {
   font-family: "Poppins";
   src: url("/Fonts/Poppins/Poppins-Regular.ttf") format("truetype");
@@ -71,8 +73,8 @@ a {
   text-decoration: none;
 }
 
-/* 2K Resolution Scaling */
-@media (min-width: 2560px) and (max-width: 3839px) {
+// 2K Resolution Scaling
+@include resolution-2k-only {
   html,
   body {
     overflow-x: hidden;
@@ -86,8 +88,8 @@ a {
   }
 }
 
-/* 4K Resolution Scaling */
-@media (min-width: 3840px) {
+// 4K Resolution Scaling
+@include resolution-4k {
   html,
   body {
     overflow-x: hidden;

@@ -1,39 +1,57 @@
+@import '../../styles/mixins';
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
-  height: 787px;
-  padding-top: 70px;
   background: var(--color-bg-main);
+
+  @include mobile-only {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include tablet-only {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include desktop-only {
+    padding-top: 70px;
+  }
+
+  @include desktop2-and-up {
+    padding-top: 70px;
+  }
 }
 
 .title {
   font-family: "Poppins", sans-serif;
-  font-size: 46px;
   font-weight: 600;
-  line-height: 48px;
   letter-spacing: 0;
   color: var(--color-text-muted);
-}
 
-@media (max-width: 1439px) {
-  .main {
-    gap: 50px;
-    padding-top: 50px;
-    height: auto;
+  @include mobile-only {
+    font-size: 30px;
+    line-height: 30px;
     padding-bottom: 50px;
   }
 
-  .title {
+  @include tablet-only {
     font-size: 32px;
     line-height: 36px;
+    padding-bottom: 50px;
   }
-}
 
-@media (max-width: 1023px) {
-  .title {
-    font-size: 30px;
-    line-height: 30px;
+  @include desktop-only {
+    font-size: 46px;
+    line-height: 48px;
+    padding-bottom: 70px;
+  }
+
+  @include desktop2-and-up {
+    font-size: 46px;
+    line-height: 48px;
+    padding-bottom: 70px;
   }
 }
