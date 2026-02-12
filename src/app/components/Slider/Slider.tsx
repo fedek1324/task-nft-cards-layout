@@ -44,6 +44,8 @@ export default function Slider({ nfts }: SliderProps) {
         spaceBetween={30}
         slidesPerView="auto"
         loop
+        loopAdditionalSlides={3}
+        watchSlidesProgress
         grabCursor
         centeredSlides
         className={styles.swiper}
