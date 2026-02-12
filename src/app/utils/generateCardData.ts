@@ -6,17 +6,33 @@ const CARD_IMAGES = [
   "/images/nft5.jpg",
 ];
 
-function randomBid(): number {
-  return +(Math.random() * 5 + 0.5).toFixed(2);
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
 }
 
-function randomEndTime(): number {
-  const ms = (Math.random() * 24 * 60 + 10) * 60 * 1000;
-  return Date.now() + ms;
+function seededRandom(seed: number, min: number, max: number): number {
+  const x = Math.sin(seed) * 10000;
+  return min + (x - Math.floor(x)) * (max - min);
 }
 
-function randomImage(): string {
-  return CARD_IMAGES[Math.floor(Math.random() * CARD_IMAGES.length)];
+function getBidFromHash(hash: number): number {
+  return +seededRandom(hash, 0.5, 5.5).toFixed(2);
+}
+
+function getEndTimeFromHash(hash: number): number {
+  const minutes = seededRandom(hash + 1000, 10, 24 * 60 + 10);
+  return Date.now() + minutes * 60 * 1000;
+}
+
+function getImageFromHash(hash: number): string {
+  const index = Math.floor(seededRandom(hash + 2000, 0, CARD_IMAGES.length));
+  return CARD_IMAGES[index % CARD_IMAGES.length];
 }
 
 export interface NftCardData {
@@ -30,11 +46,14 @@ export interface NftCardData {
 export function generateCardData(
   nfts: { id: string; name: string }[]
 ): NftCardData[] {
-  return nfts.map((nft) => ({
-    id: nft.id,
-    name: nft.name,
-    image: randomImage(),
-    bid: randomBid(),
-    endTime: randomEndTime(),
-  }));
+  return nfts.map((nft) => {
+    const hash = hashString(nft.id + nft.name);
+    return {
+      id: nft.id,
+      name: nft.name,
+      image: getImageFromHash(hash),
+      bid: getBidFromHash(hash),
+      endTime: getEndTimeFromHash(hash),
+    };
+  });
 }
