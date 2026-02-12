@@ -21,7 +21,10 @@ export default function Footer() {
       </div>
       <hr className={styles.divider} />
       <div className={styles.bottom}>
-        <span className={styles.copyright}>&copy; 2023</span>
+        <span className={styles.copyright}>
+          &copy; 2023
+          <span className={styles.copyrightExtra}> DiveSea All Rights Reserved.</span>
+        </span>
       </div>
     </footer>
   );

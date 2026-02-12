@@ -1,9 +1,30 @@
+.wrapper {
+  position: relative;
+}
+
 .nav {
   display: flex;
   align-items: center;
   height: 145px;
   padding: 46px 97px;
   background: #fff;
+}
+
+.brandName {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  color: var(--color-text-dark);
+}
+
+.burger {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
 }
 
 .links {
@@ -38,7 +59,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1439px) {
   .nav {
     height: 104px;
   }
@@ -57,6 +78,145 @@
     a {
       font-size: 14px;
       line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    position: relative;
+    z-index: 100;
+  }
+
+  .open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 100;
+
+    .mobileMenu {
+      display: block;
+    }
+  }
+
+  .nav {
+    height: 106px;
+    padding: 30px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    img {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  .brandName {
+    display: block;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: relative;
+      width: 31.5px;
+      height: 1px;
+      background: rgba(40, 40, 40, 1);
+      transition: background 0.3s;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        transition: transform 0.3s, top 0.3s;
+      }
+
+      &::before {
+        top: -10px;
+      }
+
+      &::after {
+        top: 10px;
+      }
+    }
+  }
+
+  .burgerOpen {
+    span {
+      width: 25.5px;
+      height: 1px;
+      background: transparent;
+
+      &::before,
+      &::after {
+        width: 25.5px;
+        top: 0;
+        background: rgba(40, 40, 40, 1);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .mobileMenu {
+    display: none;
+    border-top: 1px solid rgba(203, 203, 203, 1);
+    padding: 44px 30px 0;
+  }
+
+  .mobileLinks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 42px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-text-primary);
+      }
     }
   }
 }
