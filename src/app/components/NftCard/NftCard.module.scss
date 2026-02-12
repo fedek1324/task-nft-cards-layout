@@ -112,3 +112,62 @@
     opacity: 0.85;
   }
 }
+
+@media (max-width: 1024px) {
+  .card {
+    width: 210px;
+    border-radius: 18px;
+    padding: 10px;
+    gap: 14px;
+  }
+
+  .imageWrapper {
+    width: 190px;
+    height: 190px;
+    margin: 0;
+
+    .timer {
+      border-radius: 7px;
+      padding: 7px 10px;
+      min-width: auto;
+    }
+  }
+
+  .info {
+    padding: 0;
+  }
+
+  .name {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 0;
+  }
+
+  .bidLabel {
+    font-size: 11px;
+  }
+
+  .bidValue {
+    font-size: 12px;
+    line-height: 14px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .bid {
+    gap: 7px;
+  }
+
+  .button {
+    width: 90px;
+    height: 38px;
+    border-radius: 9px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

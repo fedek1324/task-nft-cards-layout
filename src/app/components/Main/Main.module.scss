@@ -16,3 +16,17 @@
   letter-spacing: 0;
   color: var(--color-text-muted);
 }
+
+@media (max-width: 1024px) {
+  .main {
+    gap: 50px;
+    padding-top: 50px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}

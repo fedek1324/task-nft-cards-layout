@@ -47,6 +47,10 @@
   --color-text-label: #94a3b8;
   --color-neutrals-6: #e6e8ec;
   --color-neutrals-8: #fcfcfd;
+  --color-footer-bg: rgba(20, 20, 22, 1);
+  --color-footer-link: #b9b9b9;
+  --color-footer-border: #818181;
+  --color-footer-copyright: #999999;
 }
 
 * {

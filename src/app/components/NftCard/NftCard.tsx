@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import Image from "next/image";
 import { NftCardData } from "../../utils/generateCardData";
 import styles from "./NftCard.module.scss";
@@ -17,12 +17,7 @@ function formatTimeLeft(endTime: number): string {
   return `${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
 }
 
-interface NftCardProps {
-  data: NftCardData;
-}
-
-export default function NftCard({ data }: NftCardProps) {
-  const { name, image, bid, endTime } = data;
+function Timer({ endTime }: { endTime: number }) {
   const [timerStr, setTimerStr] = useState(formatTimeLeft(endTime));
 
   useEffect(() => {
@@ -31,6 +26,16 @@ export default function NftCard({ data }: NftCardProps) {
     }, 1000);
     return () => clearInterval(interval);
   }, [endTime]);
+
+  return <span className={styles.timer}>{timerStr}</span>;
+}
+
+interface NftCardProps {
+  data: NftCardData;
+}
+
+const NftCard = memo(function NftCard({ data }: NftCardProps) {
+  const { name, image, bid, endTime } = data;
 
   return (
     <div className={styles.card}>
@@ -42,7 +47,7 @@ export default function NftCard({ data }: NftCardProps) {
           sizes="253px"
           className={styles.image}
         />
-        <span className={styles.timer}>{timerStr}</span>
+        <Timer endTime={endTime} />
       </div>
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
@@ -59,4 +64,6 @@ export default function NftCard({ data }: NftCardProps) {
       </div>
     </div>
   );
-}
+});
+
+export default NftCard;

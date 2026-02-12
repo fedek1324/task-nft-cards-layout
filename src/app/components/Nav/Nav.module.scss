@@ -37,3 +37,26 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .nav {
+    height: 104px;
+  }
+
+  .logo {
+    img {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  .links {
+    gap: 32px;
+    margin-left: 40px;
+
+    a {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
