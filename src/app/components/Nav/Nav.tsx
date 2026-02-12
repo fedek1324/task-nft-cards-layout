@@ -11,14 +11,18 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <div className={`${styles.wrapper} ${isOpen ? styles.open : ""} ${scrolled ? styles.scrolled : ""}`}>
+      <div className={styles.spacer} />
       <nav className={styles.nav}>
         <a href="#" className={styles.logo}>
           <Image src="/Logo.svg" alt="Logo" width={55} height={55} />
@@ -27,7 +31,9 @@ export default function Nav() {
         <ul className={styles.links}>
           {navLinks.map((link) => (
             <li key={link}>
-              <a href={`#${link.toLowerCase()}`} data-text={link}>{link}</a>
+              <a href={`#${link.toLowerCase()}`} data-text={link}>
+                {link}
+              </a>
             </li>
           ))}
         </ul>
