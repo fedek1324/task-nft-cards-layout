@@ -19,6 +19,10 @@
   transition: height 0.3s, border-radius 0.3s;
 }
 
+.logo {
+  animation: slideDown 0.8s linear(0, 0.065 5%, 0.211 10%, 0.385 15%, 0.554 20%, 0.700 25%, 0.815 30%, 0.900 35%, 0.958 40%, 0.995 45%, 1.016 50%, 1.026 55%, 1.028 60%, 1.026 65%, 1.022 70%, 1.017 75%, 1.012 80%, 1.008 85%, 1.005 90%, 1.002 95%, 1) 50ms both;
+}
+
 .brandName {
   display: none;
   font-family: "Poppins", sans-serif;
@@ -41,6 +45,7 @@
   gap: 50px;
   margin-left: 66px;
   list-style: none;
+  animation: slideDown 0.8s linear(0, 0.065 5%, 0.211 10%, 0.385 15%, 0.554 20%, 0.700 25%, 0.815 30%, 0.900 35%, 0.958 40%, 0.995 45%, 1.016 50%, 1.026 55%, 1.028 60%, 1.026 65%, 1.022 70%, 1.017 75%, 1.012 80%, 1.008 85%, 1.005 90%, 1.002 95%, 1) 50ms both;
 
   a {
     font-family: "Inter", sans-serif;
@@ -144,6 +149,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    animation: slideDown 0.8s linear(0, 0.065 5%, 0.211 10%, 0.385 15%, 0.554 20%, 0.700 25%, 0.815 30%, 0.900 35%, 0.958 40%, 0.995 45%, 1.016 50%, 1.026 55%, 1.028 60%, 1.026 65%, 1.022 70%, 1.017 75%, 1.012 80%, 1.008 85%, 1.005 90%, 1.002 95%, 1) 50ms both;
 
     span {
       display: block;
@@ -223,5 +229,16 @@
         color: var(--color-text-primary);
       }
     }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

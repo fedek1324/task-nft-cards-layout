@@ -1,4 +1,14 @@
 .homePage {
   display: flex;
   flex-direction: column;
+  animation: pageReveal 0.8s linear(0, 0.065 5%, 0.211 10%, 0.385 15%, 0.554 20%, 0.700 25%, 0.815 30%, 0.900 35%, 0.958 40%, 0.995 45%, 1 50%, 1 100%) 50ms both;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
