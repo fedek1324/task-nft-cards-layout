@@ -9,7 +9,7 @@
 .top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 412px;
 }
 
 .brand {
@@ -39,9 +39,9 @@
 
   a {
     font-family: "Inter", sans-serif;
-    font-size: 17.83px;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 26.74px;
+    line-height: 27px;
     letter-spacing: 0;
     text-transform: capitalize;
     color: var(--color-footer-link);

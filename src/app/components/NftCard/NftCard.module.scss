@@ -6,6 +6,7 @@
   background: #fff;
   overflow: hidden;
   user-select: none;
+  box-shadow: 38px 12px 60px 0px rgba(199, 199, 199, 0.6);
 }
 
 .imageWrapper {
@@ -24,7 +25,9 @@
   .timer {
     position: absolute;
     top: 14px;
-    right: 14px;
+    right: 11px;
+    display: inline-flex;
+    align-items: center;
     padding: 10px 14px;
     border-radius: 10px;
     background: rgba(28, 29, 32, 0.35);
@@ -37,8 +40,6 @@
     letter-spacing: 0;
     color: #fff;
     white-space: nowrap;
-    min-width: 115px;
-    text-align: center;
   }
 }
 

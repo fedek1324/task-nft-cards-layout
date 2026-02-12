@@ -25,7 +25,7 @@ export default function Nav() {
       <div className={styles.spacer} />
       <nav className={styles.nav}>
         <a href="#" className={styles.logo}>
-          <Image src="/Logo.svg" alt="Logo" width={55} height={55} />
+          <Image src="/Logo.svg" alt="Logo" width={53} height={53} />
           <span className={styles.brandName}>DiveSea</span>
         </a>
         <ul className={styles.links}>

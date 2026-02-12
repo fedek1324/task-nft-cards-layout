@@ -41,7 +41,7 @@ export default function Slider({ nfts }: SliderProps) {
           swiperRef.current = swiper;
         }}
         modules={[Navigation]}
-        spaceBetween={30}
+        spaceBetween={40}
         slidesPerView="auto"
         loop
         loopAdditionalSlides={3}
@@ -57,22 +57,24 @@ export default function Slider({ nfts }: SliderProps) {
         ))}
       </Swiper>
 
-      <div className={styles.arrows}>
-        <button
-          className={styles.arrow}
-          onClick={() => swiperRef.current?.slidePrev()}
-          aria-label="Previous"
-        >
-          <Image src="/arrow.svg" alt="Previous" width={14} height={9} />
-        </button>
-        <span className={styles.divider} />
-        <button
-          className={styles.arrow}
-          onClick={() => swiperRef.current?.slideNext()}
-          aria-label="Next"
-        >
-          <Image src="/arrow.svg" alt="Next" width={14} height={9} className={styles.arrowRight} />
-        </button>
+      <div className={styles.arrowsWrapper}>
+        <div className={styles.arrows}>
+          <button
+            className={styles.arrow}
+            onClick={() => swiperRef.current?.slidePrev()}
+            aria-label="Previous"
+          >
+            <Image src="/arrow.svg" alt="Previous" width={14} height={9} />
+          </button>
+          <span className={styles.divider} />
+          <button
+            className={styles.arrow}
+            onClick={() => swiperRef.current?.slideNext()}
+            aria-label="Next"
+          >
+            <Image src="/arrow.svg" alt="Next" width={14} height={9} className={styles.arrowRight} />
+          </button>
+        </div>
       </div>
     </div>
   );
