@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Nav.module.scss";
 
@@ -8,9 +8,17 @@ const navLinks = ["Discover", "Creators", "Sell", "Stats"];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className={`${styles.wrapper} ${isOpen ? styles.open : ""}`}>
+    <div className={`${styles.wrapper} ${isOpen ? styles.open : ""} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.nav}>
         <a href="#" className={styles.logo}>
           <Image src="/Logo.svg" alt="Logo" width={55} height={55} />

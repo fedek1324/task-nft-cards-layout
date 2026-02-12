@@ -1,5 +1,13 @@
 .wrapper {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.scrolled .nav {
+  height: 88px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .nav {
@@ -8,6 +16,7 @@
   height: 145px;
   padding: 46px 97px;
   background: #fff;
+  transition: height 0.3s, border-radius 0.3s;
 }
 
 .brandName {
@@ -83,10 +92,6 @@
 }
 
 @media (max-width: 1023px) {
-  .wrapper {
-    position: relative;
-    z-index: 100;
-  }
 
   .open {
     position: fixed;
