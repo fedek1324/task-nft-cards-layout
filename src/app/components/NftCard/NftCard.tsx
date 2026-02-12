@@ -58,10 +58,12 @@ const NftCard = memo(function NftCard({ data }: NftCardProps) {
         <div className={styles.row}>
           <div className={styles.bid}>
             <span className={styles.bidLabel}>Current bid</span>
-            <span className={styles.bidValue}>
-              <Image src="/eth.svg" alt="ETH" width={22} height={22} />
-              {bid}
-            </span>
+            <div className={styles.bidValue}>
+              <div className={styles.iconWrapper}>
+                <Image src="/eth.svg" alt="ETH" width={12} height={19} />
+              </div>
+              <span className={styles.bidText}>{bid}</span>
+            </div>
           </div>
           <button className={styles.button}>PLACE BID</button>
         </div>
