@@ -10,12 +10,9 @@ function randomBid(): number {
   return +(Math.random() * 5 + 0.5).toFixed(2);
 }
 
-function randomTimer(): { hours: number; minutes: number; seconds: number } {
-  return {
-    hours: Math.floor(Math.random() * 24),
-    minutes: Math.floor(Math.random() * 60),
-    seconds: Math.floor(Math.random() * 60),
-  };
+function randomEndTime(): number {
+  const ms = (Math.random() * 24 * 60 + 10) * 60 * 1000;
+  return Date.now() + ms;
 }
 
 function randomImage(): string {
@@ -27,7 +24,7 @@ export interface NftCardData {
   name: string;
   image: string;
   bid: number;
-  timer: { hours: number; minutes: number; seconds: number };
+  endTime: number;
 }
 
 export function generateCardData(
@@ -38,6 +35,6 @@ export function generateCardData(
     name: nft.name,
     image: randomImage(),
     bid: randomBid(),
-    timer: randomTimer(),
+    endTime: randomEndTime(),
   }));
 }
