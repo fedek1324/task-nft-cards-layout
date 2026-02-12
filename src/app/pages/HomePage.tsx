@@ -1,13 +1,16 @@
 import Nav from "../components/Nav/Nav";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
+import { fetchNftData } from "../utils/fetchNftData";
 import styles from "./HomePage.module.scss";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const nfts = await fetchNftData();
+
   return (
     <div className={styles.homePage}>
       <Nav />
-      <Main />
+      <Main nfts={nfts} />
       <Footer />
     </div>
   );

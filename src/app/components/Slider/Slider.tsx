@@ -7,26 +7,31 @@ import { Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
-import { useGetNftListQuery } from "../../store/nftApi";
 import { generateCardData } from "../../utils/generateCardData";
 import NftCard from "../NftCard/NftCard";
 import styles from "./Slider.module.scss";
 
-export default function Slider() {
+interface NftItem {
+  id: string;
+  contract_address: string;
+  name: string;
+  asset_platform_id: string;
+}
+
+interface SliderProps {
+  nfts: NftItem[];
+}
+
+export default function Slider({ nfts }: SliderProps) {
   const swiperRef = useRef<SwiperType | null>(null);
-  const { data: nfts, isLoading, error } = useGetNftListQuery();
 
   const cards = useMemo(() => {
-    if (!nfts) return [];
+    if (!nfts?.length) return [];
     return generateCardData(nfts.slice(0, 20));
   }, [nfts]);
 
-  if (isLoading) {
-    return <div className={styles.loading}>Loading...</div>;
-  }
-
-  if (error || !cards.length) {
-    return <div className={styles.loading}>Failed to load NFTs</div>;
+  if (!cards.length) {
+    return <div className={styles.loading}>No NFTs available</div>;
   }
 
   return (
