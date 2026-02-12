@@ -7,31 +7,31 @@
 // 4K: 3840px+
 
 @mixin mobile-only {
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     @content;
   }
 }
 
 @mixin tablet-only {
-  @media (min-width: 1024px) and (max-width: 1439px) {
+  @media (min-width: 1024px) and (max-width: 1440px) {
     @content;
   }
 }
 
 @mixin desktop-only {
-  @media (min-width: 1440px) and (max-width: 1919px) {
+  @media (min-width: 1440px) and (max-width: 1920px) {
     @content;
   }
 }
 
 @mixin desktop2-only {
-  @media (min-width: 1920px) and (max-width: 2559px) {
+  @media (min-width: 1920px) and (max-width: 2560px) {
     @content;
   }
 }
 
 @mixin resolution-2k-only {
-  @media (min-width: 2560px) and (max-width: 3839px) {
+  @media (min-width: 2560px) and (max-width: 3840px) {
     @content;
   }
 }
