@@ -27,7 +27,11 @@ function Timer({ endTime }: { endTime: number }) {
     return () => clearInterval(interval);
   }, [endTime]);
 
-  return <span className={styles.timer}>{timerStr}</span>;
+  return (
+    <span className={styles.timer} suppressHydrationWarning>
+      {timerStr}
+    </span>
+  );
 }
 
 interface NftCardProps {
