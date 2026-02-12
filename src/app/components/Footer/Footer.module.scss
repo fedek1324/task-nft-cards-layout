@@ -77,6 +77,13 @@
   display: none;
 }
 
+@media (min-width: 1920px) {
+  .footer {
+    padding-left: 337px;
+    padding-right: 337px;
+  }
+}
+
 @media (max-width: 1439px) {
   .footer {
     height: 245px;
