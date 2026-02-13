@@ -44,6 +44,9 @@ export default function Slider({ nfts }: SliderProps) {
         spaceBetween={32}
         breakpoints={{
           1024: {
+            spaceBetween: 32,
+          },
+          1440: {
             spaceBetween: 40,
           },
         }}

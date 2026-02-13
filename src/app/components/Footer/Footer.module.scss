@@ -10,7 +10,7 @@
   }
 
   @include tablet-only {
-    padding: 59px 69px;
+    padding: 59px 69px 60px;
   }
 
   @include desktop-only {
@@ -226,6 +226,8 @@
 }
 
 .bottom {
+  display: flex;
+
   @include mobile-only {
     padding-top: 26px;
     text-align: center;

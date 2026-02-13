@@ -88,9 +88,11 @@
     }
 
     @include tablet-only {
+      top: 10px;
       border-radius: 7px;
       padding: 7px 10px;
       font-size: 10px;
+      line-height: 10px;
       backdrop-filter: blur(2.5px);
     }
 
@@ -193,6 +195,7 @@
 
   @include tablet-only {
     font-size: 11px;
+    padding-bottom: 7px;
   }
 
   @include desktop-only {
@@ -227,9 +230,8 @@
     line-height: 14px;
 
     img {
-      width: 16px;
-      height: 16px;
-      margin-right: 6px;
+      width: 8.33px;
+      height: 13.67px;
     }
   }
 
@@ -253,6 +255,12 @@
   margin-right: 6px;
 
   @include mobile-only {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
+
+  @include tablet-only {
     width: 16px;
     height: 16px;
     margin-right: 3px;
