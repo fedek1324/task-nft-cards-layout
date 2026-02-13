@@ -1,9 +1,4 @@
-interface NftItem {
-  id: string;
-  contract_address: string;
-  name: string;
-  asset_platform_id: string;
-}
+import { NftItem } from "../types/nft";
 
 export async function fetchNftData(): Promise<NftItem[]> {
   try {

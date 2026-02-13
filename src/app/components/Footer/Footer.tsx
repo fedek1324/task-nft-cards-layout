@@ -1,7 +1,6 @@
 import Image from "next/image";
+import { footerLinks } from "../../constants/navigation";
 import styles from "./Footer.module.scss";
-
-const footerLinks = ["Privacy Policy", "Term & Conditions", "About Us", "Contact"];
 
 export default function Footer() {
   return (

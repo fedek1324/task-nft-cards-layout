@@ -1,12 +1,6 @@
+import { NftItem } from "../../types/nft";
 import Slider from "../Slider/Slider";
 import styles from "./Main.module.scss";
-
-interface NftItem {
-  id: string;
-  contract_address: string;
-  name: string;
-  asset_platform_id: string;
-}
 
 interface MainProps {
   nfts: NftItem[];

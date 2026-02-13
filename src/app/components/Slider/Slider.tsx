@@ -3,20 +3,13 @@
 import { useRef, useMemo } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
+import { NftItem } from "../../types/nft";
 import { generateCardData } from "../../utils/generateCardData";
 import NftCard from "../NftCard/NftCard";
 import styles from "./Slider.module.scss";
-
-interface NftItem {
-  id: string;
-  contract_address: string;
-  name: string;
-  asset_platform_id: string;
-}
 
 interface SliderProps {
   nfts: NftItem[];
@@ -40,7 +33,6 @@ export default function Slider({ nfts }: SliderProps) {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        modules={[Navigation]}
         spaceBetween={32}
         breakpoints={{
           1024: {

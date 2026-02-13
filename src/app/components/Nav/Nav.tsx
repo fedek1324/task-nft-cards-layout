@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { navLinks } from "../../constants/navigation";
 import styles from "./Nav.module.scss";
-
-const navLinks = ["Discover", "Creators", "Sell", "Stats"];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
