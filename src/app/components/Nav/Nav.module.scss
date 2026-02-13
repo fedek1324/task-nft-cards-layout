@@ -116,7 +116,7 @@
   }
 
   @include desktop-only {
-    display: block;
+    display: none;
   }
 
   @include desktop2-and-up {

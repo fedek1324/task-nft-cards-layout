@@ -125,7 +125,7 @@
   }
 
   @include desktop-only {
-    padding: 14px;
+    padding: 20px 14px 14px;
   }
 
   @include desktop2-and-up {
@@ -157,7 +157,7 @@
   @include desktop-only {
     font-size: 22px;
     line-height: 24px;
-    padding-bottom: 14px;
+    padding-bottom: 20px;
   }
 
   @include desktop2-and-up {
@@ -179,6 +179,12 @@
   padding-top: 2px;
   padding-bottom: 2px;
   height: 38px;
+
+  @include desktop-only {
+    height: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 }
 
 .bidLabel {
@@ -200,6 +206,8 @@
 
   @include desktop-only {
     font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 4px;
   }
 
   @include desktop2-and-up {
@@ -238,6 +246,11 @@
   @include desktop-only {
     font-size: 16px;
     line-height: 24px;
+
+    img {
+      width: 11.46px;
+      height: 18.79px;
+    }
   }
 
   @include desktop2-and-up {
@@ -264,6 +277,12 @@
     width: 16px;
     height: 16px;
     margin-right: 3px;
+  }
+
+  @include desktop-only {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-right: 4px;
   }
 }
 
