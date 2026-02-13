@@ -102,7 +102,7 @@
 
   @include mobile-only {
     width: 82px;
-    padding: 15px;
+    height: 18px;
   }
 
   @include tablet-only {
@@ -132,6 +132,16 @@
   transition: opacity 0.2s;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+
+  @include mobile-only {
+    width: 18px;
+    height: 18px;
+
+    img {
+      width: 10.5px;
+      height: 6.75px;
+    }
+  }
 
   @include tablet-only {
     img {

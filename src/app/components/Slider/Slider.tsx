@@ -41,7 +41,12 @@ export default function Slider({ nfts }: SliderProps) {
           swiperRef.current = swiper;
         }}
         modules={[Navigation]}
-        spaceBetween={40}
+        spaceBetween={32}
+        breakpoints={{
+          1024: {
+            spaceBetween: 40,
+          },
+        }}
         slidesPerView="auto"
         loop
         loopAdditionalSlides={3}

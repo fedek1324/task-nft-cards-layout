@@ -78,6 +78,8 @@
     white-space: nowrap;
 
     @include mobile-only {
+      top: 10px;
+      right: 10px;
       border-radius: 7px;
       padding: 7px 10px;
       font-size: 10px;
@@ -172,22 +174,9 @@
 .bid {
   display: flex;
   flex-direction: column;
-
-  @include mobile-only {
-    padding-bottom: 7px;
-  }
-
-  @include tablet-only {
-    padding-bottom: 7px;
-  }
-
-  @include desktop-only {
-    padding-bottom: 2px;
-  }
-
-  @include desktop2-and-up {
-    padding-bottom: 2px;
-  }
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 38px;
 }
 
 .bidLabel {
@@ -199,6 +188,7 @@
 
   @include mobile-only {
     font-size: 11px;
+    padding-bottom: 7px;
   }
 
   @include tablet-only {
@@ -227,9 +217,8 @@
     line-height: 14px;
 
     img {
-      width: 16px;
-      height: 16px;
-      margin-right: 6px;
+      width: 8.33px;
+      height: 13.67px;
     }
   }
 
@@ -262,10 +251,21 @@
   width: 22px;
   height: 22px;
   margin-right: 6px;
+
+  @include mobile-only {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
 }
 
 .bidText {
   align-self: center;
+
+  @include mobile-only {
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
 }
 
 .button {

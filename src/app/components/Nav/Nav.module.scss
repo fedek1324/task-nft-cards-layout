@@ -132,6 +132,7 @@
   height: 40px;
   background: none;
   border: none;
+  padding: 0;
   cursor: pointer;
   animation: slideDown 0.8s linear(0, 0.065 5%, 0.211 10%, 0.385 15%, 0.554 20%, 0.700 25%, 0.815 30%, 0.900 35%, 0.958 40%, 0.995 45%, 1.016 50%, 1.026 55%, 1.028 60%, 1.026 65%, 1.022 70%, 1.017 75%, 1.012 80%, 1.008 85%, 1.005 90%, 1.002 95%, 1) 50ms both;
 
@@ -139,7 +140,7 @@
     display: block;
     position: relative;
     width: 31.5px;
-    height: 1px;
+    height: 2px;
     background: rgba(40, 40, 40, 1);
     transition: background 0.3s;
 
@@ -297,7 +298,7 @@
 .burgerOpen {
   span {
     width: 25.5px;
-    height: 1px;
+    height: 2px;
     background: transparent;
 
     &::before,

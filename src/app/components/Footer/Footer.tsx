@@ -23,7 +23,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <span className={styles.copyright}>
           &copy; 2023
-          <span className={styles.copyrightExtra}> DiveSea All Rights Reserved.</span>
+          <span className={styles.copyrightExtra}>&nbsp;DiveSea All Rights Reserved.</span>
         </span>
       </div>
     </footer>
