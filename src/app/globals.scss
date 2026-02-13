@@ -1,5 +1,5 @@
-@import './styles/fonts';
-@import './styles/mixins';
+@use './styles/fonts';
+@use './styles/mixins' as *;
 
 :root {
   --color-text-primary: #000000;
