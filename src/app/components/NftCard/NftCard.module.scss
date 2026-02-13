@@ -129,7 +129,7 @@
   }
 
   @include desktop2-and-up {
-    padding: 14px;
+    padding: 20px 14px 14px;
   }
 }
 
@@ -163,7 +163,7 @@
   @include desktop2-and-up {
     font-size: 22px;
     line-height: 24px;
-    padding-bottom: 14px;
+    padding-bottom: 20px;
   }
 }
 
@@ -181,6 +181,12 @@
   height: 38px;
 
   @include desktop-only {
+    height: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  @include desktop2-and-up {
     height: 100%;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -212,6 +218,7 @@
 
   @include desktop2-and-up {
     font-size: 14px;
+    padding-bottom: 4px;
   }
 }
 
@@ -280,6 +287,12 @@
   }
 
   @include desktop-only {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-right: 4px;
+  }
+
+  @include desktop2-and-up {
     padding-top: 1px;
     padding-bottom: 1px;
     margin-right: 4px;

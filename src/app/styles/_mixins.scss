@@ -30,6 +30,14 @@
   }
 }
 
+// Combined mixin for desktop2 and higher resolutions (2K, 4K)
+@mixin desktop2-and-up {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+
 @mixin resolution-2k-only {
   @media (min-width: 2560px) and (max-width: 3840px) {
     @content;
@@ -38,13 +46,6 @@
 
 @mixin resolution-4k {
   @media (min-width: 3840px) {
-    @content;
-  }
-}
-
-// Combined mixin for desktop2 and higher resolutions (2K, 4K)
-@mixin desktop2-and-up {
-  @media (min-width: 1920px) {
     @content;
   }
 }

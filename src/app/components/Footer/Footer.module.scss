@@ -77,8 +77,8 @@
   @include desktop2-and-up {
     img {
       margin-right: 10px;
-      width: 53px;
-      height: 53px;
+      width: 65px;
+      height: 65px;
     }
   }
 }
@@ -221,7 +221,7 @@
   }
 
   @include desktop2-and-up {
-    margin-top: auto;
+    margin-top: 25px;
   }
 }
 
