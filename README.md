@@ -1,4 +1,4 @@
-# Funtech Test Task
+# Test Task
 
 Проект на [Next.js](https://nextjs.org) 16 с React 19, Redux Toolkit, Framer Motion и Swiper.
 
