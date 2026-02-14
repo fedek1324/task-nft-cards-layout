@@ -2,6 +2,8 @@
 
 Проект на [Next.js](https://nextjs.org) 16 с React 19, Redux Toolkit, Framer Motion и Swiper.
 
+Live: https://task-nft-cards-layout.vercel.app/
+
 ## Требования
 
 - [Docker](https://www.docker.com/products/docker-desktop/) и Docker Compose
